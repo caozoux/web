@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>二级dropdown弹出菜单--A CROSS BROWSER DROP DOWN CASCADING VALIDATING MENU</title>
+<style type="text/css">
+/* common styling */
+/* set up the overall width of the menu div, the font and the margins */
+
+.menu {
+font-family: arial, sans-serif; 
+width:750px; 
+margin:0; 
+margin:50px 0;
+}
+/* remove the bullets and set the margin and padding to zero for the unordered list */
+.menu ul {
+padding:0; 
+margin:0;
+list-style-type: none;
+}
+/* float the list so that the items are in a line and their position relative so that the drop down list will appear in the right place underneath each list item */
+.menu ul li {
+float:left; 
+position:relative;
+}
+/* style the links to be 104px wide by 30px high with a top and right border 1px solid white. Set the background color and the font size. */
+.menu ul li a, .menu ul li a:visited {
+display:block; 
+text-align:center; 
+text-decoration:none; 
+width:104px; 
+height:30px; 
+color:#000; 
+border:1px solid #fff;
+border-width:1px 1px 0 0;
+background:#c9c9a7; 
+line-height:30px; 
+font-size:11px;
+}
+/* make the dropdown ul invisible */
+.menu ul li ul {
+display: none;
+}
+
+/* specific to non IE browsers */
+/* set the background and foreground color of the main menu li on hover */
+.menu ul li:hover a {
+color:#fff; 
+background:#b3ab79;
+}
+/* make the sub menu ul visible and position it beneath the main menu list item */
+.menu ul li:hover ul {
+display:block; 
+position:absolute; 
+top:31px; 
+left:0; 
+width:105px;
+}
+/* style the background and foreground color of the submenu links */
+.menu ul li:hover ul li a {
+display:block; 
+background:#faeec7; 
+color:#000;
+}
+/* style the background and forground colors of the links on hover */
+.menu ul li:hover ul li a:hover {
+background:#dfc184; 
+color:#000;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- start pop menu-->
+<div class="menu">
+<ul>
+<li><a class="hide" href="../menu/index.html">DEMOS</a>
+    <ul>
+    <li><a href="../menu/zero_dollars.html" title="The zero dollar ads page">zero dollars</a></li>
+    <li><a href="../menu/embed.html" title="Wrapping text around images">wrapping text</a></li>
+    <li><a href="../menu/form.html" title="Styling forms">styled form</a></li>
+    <li><a href="../menu/nodots.html" title="Removing active/focus borders">active focus</a></li>
+    <li><a href="../menu/shadow_boxing.html" title="Multi-position drop shadow">shadow boxing</a></li>
+    <li><a href="../menu/old_master.html" title="Image Map for detailed information">image map</a></li>
+    <li><a href="../menu/bodies.html" title="fun with background images">fun backgrounds</a></li>
+    <li><a href="../menu/fade_scroll.html" title="fade-out scrolling">fade scrolling</a></li>
+    <li><a href="../menu/em_images.html" title="em size images compared">em sized images</a></li>
+    </ul>
+</li>
+</ul>
+</div>
+<!-- end pop menu-->
+
+</body>
+</html>
