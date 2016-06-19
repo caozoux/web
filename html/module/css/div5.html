@@ -1,0 +1,183 @@
+<html lang="en">
+<head>
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="dist/css/swiper.min.css">
+    <meta charset="utf-8">
+    <!-- Demo styles -->
+<style>
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td,label { 
+padding: 0; 
+margin: 0; 
+} 
+
+li {
+list-style:none;
+}
+
+.litext1 {
+line-height:12px; 
+font-size:13px; 
+color:#666;
+}
+
+.li_left {
+float:left
+}
+
+.align-left {
+margin: 10px 0;  
+border-style:dashed;  
+height :50%;  
+width:48%;  
+float:left;  
+}
+
+.align-right{
+margin: 10px 0;  
+border-style:dashed;  
+height :50%;  
+width:48%;  
+float:right;  
+}
+
+.litext1 li:hover {
+text-decoration: underline	
+}
+
+.div_normal{
+clear:both
+}
+
+div {
+    border-style:dashed;  
+}
+
+#page  
+{  
+    margin:0 25% 0 25%;  
+    padding: 10px 10px;  
+    border-style:dashed;  
+    height:500px;  
+}
+
+html, body {
+	position: relative;
+	height: 100%;
+}
+
+body {
+	background: #eee;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color:#000;
+	margin: 0;
+	padding: 0;
+}
+
+.nindex_new_top{ height:35px;}
+.nindex_new_top li{ float:left; width:86px; text-align:center; color:#333; height:30px; line-height:30px; cursor:pointer; font-size:14px;}
+.nindex_new_top li.on{ color:#fff; background:#e50101; position:relative;}
+.nindex_new_top li.on:before{ display:block; content:""; position:absolute; width:0px; height:0px; border-style:solid dashed dashed dashed;border-width:6px;
+	border-color: #e50101 transparent transparent transparent; left:50%; margin-left:-6px; bottom:-11px; }
+
+.nindex_new_con{ position:relative;}
+.nindex_new_item{ padding-top:6px; padding-left:5px;}
+.nindex_new_item .nindex_new_more{ position:absolute;right:10px; top:-36px;}
+.nindex_new_list{ line-height:28px; font-size:13px; color:#666;}
+.nindex_new_list li{ color:#666; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.hide{ display:none;}
+.nindex_new{ box-sizing:border-box; overflow:hidden; height:342px; width:485px; background: no-repeat right bottom #fff; border:1px solid #d6d6d6; float:right;}
+.nindex_new{ padding:10px;}
+</style>
+</head>
+<body>
+
+<div style="height:100px">
+
+</div>
+
+<div id="page">
+<div class="litext1 align-left">
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="res/2016052312331632_S.jpg" /></div>
+            <div class="swiper-slide"><img src="res/2016052312271784_S.jpg" /></div>
+            <div class="swiper-slide"><img src="res/2016052011584270_S.jpg"  /></div>
+			<div class="swiper-slide"><img src="res/2016051811563634_S.jpg" /></div>
+			<div class="swiper-slide"><img src="res/2016051811522804.png" /></div>
+			<div class="swiper-slide"><img src="res/2016050218162478_S.jpg" /></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<div class="litext1 align-right">
+    <div class="nindex_new" id="indexNewsbox">
+		<ul class="nindex_new_top">
+			<li class="on">共青要闻</li><li>通知公告</li>
+		</ul>
+
+		<div class="nindex_new_con">
+			<div class="nindex_new_item">
+				<div class="nindex_new_list">
+					<ul>
+						<li>· 省委第十三巡视组向共青团广东省委员会反馈巡视情况</li>
+						<li>· 关于加强中学生志愿服务工作的实施意见</li>
+						<li>· “盐商杯”第三届“创青春”中国青年创新创业大赛在沪启动</li>
+						<li>· 团中央、教育部、民政部联合部署实施“七彩假期”志愿服务项目</li>
+						<li>· 李源潮：用真善美的文化艺术&nbsp;丰富少年儿童的精神世界</li>
+						<li>· 全国少工委认真学习习近平总书记给大陈岛老垦荒队员后代回信</li>
+						<li>· “六一”国际儿童节：习近平回信勉励大陈岛老垦荒队员的后代</li>
+						<li>· 胡春华同志在“五四”青年节与青年代表座谈时的讲话</li>
+						<li>· 池志雄同志在共青团广东省第十三届委员会常委（扩大）会议上的讲话</li>
+						<li>· 1407个大学生创业项目跃上“中国青创板”</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="div_normal">
+</div>
+
+<div style="height:100px">
+
+</div>
+
+<div style="height:100px">
+
+</div>
+
+<div style="height:100px">
+
+</div>
+
+<div style="height:100px">
+
+</div>
+
+<div style="height:100px">
+
+</div>
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    </script>
+</body>
+</html>
