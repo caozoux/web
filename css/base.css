@@ -94,4 +94,3 @@ list-style:none;
 a{ color:#333; text-decoration:none; cursor:pointer;}
 a:hover{ text-decoration:underline;color:#2277ee}
 a.blue{color:#2277ee}
-li a{height:30px; line-height:25px; width:100%; font-size:18px}
