@@ -19,14 +19,32 @@
     <i class="glyphicon glyphicon-remove"></i> Delete
   </button>
 </div>
-<table
-		id="table">
+<table id="table">
 </table>
 
 <script type="text/javascript">
   var $table = $('#table')
   var $remove = $('#remove')
   var selections = []
+  console.log("#table call bootstrapTable")
+   $('#table').bootstrapTable({
+	  toolbar:"#toolbar",
+	  search:true,
+	  showRefresh:true,
+	  showToggle:true,
+	  showColumns:true,
+	  showExport:true,
+	  detailView:true,
+	  detailFormatter:"detailFormatter",
+	  minimumCountColumns:"2",
+	  showPaginationSwitch:true,
+	  pagination:true,
+	  idField:"id",
+	  pageList:"[10, 25, 50, 100, ALL]",
+	  showFooter:false,
+	  sidePagination:"server",
+	  url:"https://examples.wenzhixin.net.cn/examples/bootstrap_table/data",
+	  responseHandler:"responseHandler",})
 
   function getIdSelections() {
     return $.map($table.bootstrapTable('getSelections'), function (row) {
@@ -90,26 +108,15 @@
 
   function initTable() {
     $table.bootstrapTable({
-	  toolbar:"#toolbar",
-	  search:true,
-	  showRefresh:true,
-	  showToggle:true,
-	  showColumns:true,
-	  showExport:true,
-	  detailView:true,
-	  detailFormatter:"detailFormatter",
-	  minimumCountColumns:"2",
-	  showPaginationSwitch:true,
-	  pagination:true,
-	  idField:"id",
-	  pageList:"[10, 25, 50, 100, ALL]",
-	  showFooter:false,
-	  sidePagination:"server",
-	  url:"https://examples.wenzhixin.net.cn/examples/bootstrap_table/data",
-	  responseHandler:"responseHandler",
       height: 500,
       columns: [
         [{
+          field: 'state',
+          checkbox: true,
+          rowspan: 2,
+          align: 'center',
+          valign: 'middle'
+        }, {
           title: 'Item ID',
           field: 'id',
           rowspan: 2,
@@ -142,6 +149,34 @@
           formatter: operateFormatter
         }]
       ]
+    })
+    $table.on('check.bs.table uncheck.bs.table ' +
+      'check-all.bs.table uncheck-all.bs.table',
+    function () {
+      $remove.prop('disabled', !$table.bootstrapTable('getSelections').length)
+
+      // save your data, here just save the current page
+      selections = getIdSelections()
+      // push or splice the selections if you want to save all data selections
+    })
+    $table.on('expand-row.bs.table', function (e, index, row, $detail) {
+      if (index % 2 === 1) {
+        $detail.html('Loading from ajax request...')
+        $.get('LICENSE', function (res) {
+          $detail.html(res.replace(/\n/g, '<br>'))
+        })
+      }
+    })
+    $table.on('all.bs.table', function (e, name, args) {
+      console.log(name, args)
+    })
+    $remove.click(function () {
+      var ids = getIdSelections()
+      $table.bootstrapTable('remove', {
+        field: 'id',
+        values: ids
+      })
+      $remove.prop('disabled', true)
     })
   }
 
